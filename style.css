@@ -17,6 +17,18 @@ body {
     color: #1e3a8a;
 }
 
+/* 하이퍼링크 스타일 */
+a {
+    font-family: 'Poppins', sans-serif; /* 원하는 폰트로 변경 */
+    font-weight: 400; /* 글자 두께 변경 (원하는 두께로 수정 가능) */
+    color: #1e3a8a; /* 기본 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+a:hover {
+    color: #e3f2fd; /* 호버 시 색상 변경 */
+    text-decoration: underline; /* 호버 시 밑줄 추가 */
+}
 button {
     margin: 20px;
 }
