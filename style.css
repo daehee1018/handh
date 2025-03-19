@@ -1,51 +1,159 @@
-/* 기본 스타일링 */
+/* 반응형 웹 설정 */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Quicksand:wght@300;400;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: aliceblue;
+    text-align: center;
+    color: #1e3a8a;
+}
+
+button {
+    margin: 20px;
+}
+
+/* 버튼 스타일 - 귀엽고 이쁘게 */
+.w-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif; /* 폰트 변경 */
+    font-weight: 600; /* 두께 조정 */
+    font-size: 15px; /* 글자 크기 조정 */
+    letter-spacing: 0.5px; /* 자간 추가 */
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 버튼 컬러 개선 */
+.w-btn-indigo {
+    background: linear-gradient(135deg, skyblue, white);
+    color: white;
+}
+
+.w-btn-green {
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    color: white;
+}
+
+.w-btn-gray {
+    background: linear-gradient(135deg, #757f9a, #d7dde8);
+    color: white;
+}
+
+/* 호버 효과 - 살짝 올라오게 */
+.w-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.1);
+}
+
+/* 클릭 효과 - 작아졌다 돌아오는 애니메이션 */
+.w-btn:active {
+    transform: scale(0.95);
+}
+
+/* 반짝이는 효과 */
+.w-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-30deg);
+    transition: all 0.5s;
+}
+
+.w-btn:hover::after {
+    left: 100%;
+}
+/* 버튼 스타일 - 둥글게 변경 */
+.w-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: 0.25s;
+    text-decoration: none;
+    border: none;
+}
+
+.w-btn-indigo {
+    background-color: white;
+    color: #e3f2fd;
+    border: 2px solid #e3f2fd;
+    border-radius: 25px;
+}
+
+.w-btn-green {
+    background-color: #77af9c;
+    color: #e3f2fd;
+    border-radius: 25px;
+}
+
+.w-btn-gray {
+    background-color: #a3a1a1;
+    color: #e3dede;
+    border-radius: 25px;
 }
 
 /* 헤더 스타일링 */
 header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
+    background: #e3f2fd;
+    color: aliceblue;
+    padding: 15px 0;
     text-align: center;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #1e3a8a;
     text-decoration: none;
 }
 
-/* 섹션 스타일링 */
+/* 로고 스타일링 */
+.logo img {
+    width: 150px;
+    height: auto;
+    border-radius: 15px; /* 둥글게 */
+}
+
+/* 섹션 스타일 - 둥글게 변경 */
 section {
     padding: 20px;
-    margin: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-}
-
-section h2 {
-    color: #333;
-}
-
-/* 이미지 스타일링 */
-#about img {
-    margin-top: 10px;
-    border-radius: 8px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 20px;
+    max-width: 90%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* 공지사항 목록 */
@@ -55,33 +163,75 @@ section h2 {
 }
 
 #news-list li {
-    background-color: #e2e2e2;
+    background-color: #e3f2fd;
     margin: 5px 0;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
+    color: #1e3a8a;
 }
 
-/* 연락처 폼 */
+/* 연락처 폼 - 둥글게 변경 */
 form {
     display: flex;
     flex-direction: column;
     max-width: 400px;
-    margin-top: 20px;
+    margin: 20px auto;
+    border-radius: 20px;
 }
 
 form input, form textarea, form button {
     padding: 10px;
     margin: 10px 0;
-    border-radius: 5px;
+    border-radius: 15px;
+    width: 100%;
+    border: 2px solid #1e3a8a;
 }
 
 form button {
-    background-color: #333;
-    color: #fff;
-    border: none;
+    background-color: aliceblue;
+    color: #1e3a8a;
+    border: 2px solid #1e3a8a;
     cursor: pointer;
+    border-radius: 20px;
 }
 
 form button:hover {
-    background-color: #555;
+    background-color: #1e3a8a;
+    color: aliceblue;
 }
+
+/* 반응형 디자인 적용 */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    section {
+        width: 95%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 0;
+        border-radius: 0 0 15px 15px;
+    }
+    
+    section {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .w-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
